@@ -1,0 +1,453 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+p{
+    margin: 0;
+}
+.magh_header_wrapper{
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#fff;
+    border: 1px solid #EEEDF0
+    
+}
+.magh_header_wrapper .magh_header_startSec{
+    display: flex;
+    align-items: center;
+}
+.magh_header_wrapper .magh_header_startSec .magh_user_name {
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+
+
+
+/* donat chart css */
+
+.card{
+ border: 1px solid #EEEDF0;
+ border-radius: 8px;;  
+}
+.card-header {
+    border-bottom:1.5px solid #EEEDF0;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 140%;
+    color: #333333 !important;
+}
+
+
+.attendance-legend {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.attendance-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Mandatory Colors */
+.present { background-color: #66C61C; }
+.remote  { background-color: #9C9EFF; }
+.absent  { background-color: #FF5A5A; }
+.late    { background-color: #FF9A3E; }
+.leave   { background-color: #7AD9FF; }
+
+
+.attendance-trend-card {
+    height: 296px;               /* TOTAL card height */
+}
+
+.attendance-trend-card .card-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+#attendanceTrend {
+    height: 248px;               /* 296 - header (48px) */
+    width: 100%;
+}
+
+
+.quick-actions-card {
+    border-radius: 10px;
+    border: 1px solid #ECECEC;
+}
+
+.quick-actions-card .card-header {
+    background: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.quick-actions-card .card-body {
+    padding: 16px;
+}
+
+/* Action box */
+.qa-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #DEDDE0;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Icon */
+.qa-item img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Text */
+.qa-item span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1F1F1F;
+    line-height: 1.2;
+}
+
+/* Hover (very subtle like image) */
+.qa-item:hover {
+    background: #F9F9F9;
+    border-color: #CFCFD4;
+}
+
+
+.holidays-card {
+    border-radius: 12px;
+}
+
+.holidays-view {
+    color: #758BFD;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.holidays-list {
+    list-style: none;
+    padding: 0;
+}
+
+.holiday-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.holiday-item:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.holiday-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.holiday-date {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+
+
+
+
+/* Tab Styling */
+.moments-tabs {
+    border-bottom: none;
+    gap: 6px;
+}
+
+.moments-tabs .nav-link {
+    border: none;
+    background: transparent;
+    color: #a0a0a0;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+/* ✅ ACTIVE TAB STYLE (EXACT AS YOU ASKED) */
+.moments-tabs .nav-link.active {
+    background-color: #eff6ff;
+    color: #758BFD;
+    padding: 8px 14px;
+    border-radius: 50px;
+}
+
+/* User List */
+.user-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+}
+
+.loc-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-subtext {
+    font-size: 13px;
+    color: #a0a0a0;
+}
+
+
+
+
+
+
+
+
+.efficiency-summary {
+    padding: 8px 4px;
+}
+
+.efficiency-value {
+    font-size: 26px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.efficiency-label {
+    font-size: 12px;
+    color: #6B7280;
+    margin-bottom: 10px;
+}
+
+/* Highcharts overrides */
+.highcharts-tooltip text {
+    fill: #fff !important;
+    font-size: 12px !important;
+}
+
+.highcharts-tooltip-box {
+    fill: #111827 !important;
+    rx: 6;
+    ry: 6;
+}
+
+
+
+
+/* Live Punch Style Start */
+.livePunch_card {
+    border-radius: 12px;
+    border: 1px solid #EEEDF0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.livePunch_card .card-header {
+    border-bottom: none;
+    padding: 1.25rem 1rem 0.5rem;
+    font-size: 1.1rem;
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: #758BFD;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.macs_punch_MainItem {
+    display: flex;
+    align-items: flex-start;
+}
+
+.livePunch_mainImg img {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.livePunch_mainUser_details {
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.livePunch_mainUser_name {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.livePunch_mainUser_name .emp_code {
+    margin-left: 0.75rem;
+    background-color: #F0F3FF;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    color: #758BFD;
+}
+
+.livePunch_mainUser_designation {
+    font-size: 0.85rem;
+    color: #8E8E93;
+    margin: 2px 0 8px;
+}
+
+.punch_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.punch_status {
+    display: flex;
+    align-items: center;
+    background-color: #E7F7EF;
+    color: #1A764F;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 5px 12px;
+}
+
+.punch_status img {
+    margin-right: 6px;
+}
+
+.punch_timimg {
+    color: #000;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* User List Section */
+.macs_punch_user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.macs_punch_user_details {
+    display: flex;
+    align-items: center;
+}
+
+.macs_punch_userImg img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.macs_punch_user_info p { margin-bottom: 0; }
+
+.macs_punch_user_empCode {
+    font-size: 0.85rem;
+    color: #8E8E93;
+}
+
+.macs_punch_user_name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.macs_user_punch_details p { margin-bottom: 0; }
+
+.macs_user_punch_status {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.macs_user_punch_status.checkedIn { color: #45BF8C; }
+.macs_user_punch_status.checkedOut { color: #BF4945; }
+
+.macs_user_pnch_time {
+    font-size: 0.85rem;
+    color: #8E8E93;
+}
+
+hr {
+    border-top: 1px solid #F2F2F7;
+    opacity: 1;
+}
+
+
+@media (max-width: 1400px) {
+    .quick-actions-card .qa-item {
+        font-size: 10px; /* Adjust font size */
+        text-align: center; /* Make text centered */
+    }
+
+    .quick-actions-card .qa-item img {
+        width: 12px; /* Adjust image size */
+        height: 12px;
+        margin-bottom: 5px; /* Space between image and text */
+    }
+
+       .quick-actions-card .qa-item span {
+        display: block;
+        word-wrap: break-word;
+        font-size: 9px;
+    }
+}

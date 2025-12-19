@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaghPI Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bs_5_3.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="magh_header_wrapper" style="height: 72px;">
+        <div class="d-flex justify-content-between align-items-center  w-100">
+            <div class="d-flex align-items-center magh_header_startSec">
+                <div class="logo_wrapper">
+                    <img src="assets/images/magh_pi_logo.svg" width="65px" height="56px" alt="logo" />
+                </div>
+                <p class="magh_user_name">Good Morning, Mike!</p>
+            </div>
+
+            <div class="d-flex gap-2 align-items-center">
+                <select class="form-select form-select-sm" style="min-width:150px; height: 40px;">
+                    <option>This Month</option>
+                </select>
+               <button class="btn btn-sm d-inline-flex align-items-center gap-2 px-3" style="max-width:720px; min-width:221px; height:40px; border:1px solid #DEDDE0;">
+                    <img src="assets/images/edit.svg"  width="16" height="16" alt="edit" class="align-middle">
+                    <span class="fw-medium">Customize Dashboard</span>
+                </button>
+                <img src="assets/images/user.svg" width="36px" height="36px" alt="logo" />
+                <img src="assets/images/alert.svg" width="36px" height="36px" alt="logo" />
+            </div>
+        </div>
+        <div class="magh_header_endSec"></div>
+    </header>
+
+   <section class="container-fluid p-4 pb-0">
+    <div class="row g-3 mb-4">
+        <div class="col-12 col-md-9">
+            <div class="row g-3">
+                <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="card attendance-trend-card  h-100">
+                        <div class="card-header bg-white fw-semibold">
+                            Attendance Overview
+                        </div>
+                        <div class="card-body d-flex align-items-center">
+                            <div id="attendanceChart" style="width: 60%; height: 220px;"></div>
+
+                            <ul class="attendance-legend ms-3 mb-0">
+                                <li><span class="dot present"></span> Present - 115</li>
+                                <li><span class="dot remote"></span> Remote - 18</li>
+                                <li><span class="dot absent"></span> Absent - 20</li>
+                                <li><span class="dot late"></span> Late - 38</li>
+                                <li><span class="dot leave"></span> On Leave - 42</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Trend -->
+                <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+                    <div class="card attendance-card attendance-trend-card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                            Attendance Trend
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="attendanceTrend"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                    <div class="card quick-actions-card h-100">
+                        <div class="card-header">
+                            Quick Actions
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/right_arrow.svg"><span>Apply<br>Leave</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/bag.svg"><span>Schedule Meeting</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/eye.svg"><span>View Timesheet</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/mark.svg"><span>Attendance Correction</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/download.svg"><span>Export <br> Reports</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/right_circle.svg"><span>Approve Requests</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/list.svg"><span>Audit  <br> Logs</span></div></div>
+                                <div class=" col-6"><div class="qa-item"><img src="assets/images/person.svg"><span>User Management</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Holidays -->
+                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="card attendance-card h-100 holidays-card">
+                        <div class="card-header bg-white fw-semibold d-flex justify-content-between align-items-center">
+                            <span>Holidays</span>
+                            <span class="holidays-view">View</span>
+                        </div>
+
+                        <div class="card-body p-3">
+                            <ul class="holidays-list mb-0">
+                                <li class="holiday-item">
+                                    <div class="holiday-icon bg-purple">
+                                        <img src="assets/images/Christmas.svg" alt="" height="40" width="40">
+                                    </div>
+                                    <div class="holiday-text">
+                                        <div class="holiday-title">Christmas</div>
+                                        <div class="holiday-date">25 Dec 2025</div>
+                                    </div>
+                                </li>
+
+                                <li class="holiday-item">
+                                    <div class="holiday-icon bg-yellow">
+                                        <img src="assets/images/Sankranti.svg" alt="" height="40" width="40">
+                                    </div>
+                                    <div class="holiday-text">
+                                        <div class="holiday-title">Makar Sankranti</div>
+                                        <div class="holiday-date">14 Jan 2026</div>
+                                    </div>
+                                </li>
+
+                                <li class="holiday-item">
+                                    <div class="holiday-icon bg-pink">
+                                        <img src="assets/images/Republic.svg" alt="" height="40" width="40">
+                                    </div>
+                                    <div class="holiday-text">
+                                        <div class="holiday-title">Republic Day</div>
+                                        <div class="holiday-date">26 Jan 2026</div>
+                                    </div>
+                                </li>
+
+                                <li class="holiday-item">
+                                    <div class="holiday-icon bg-blue">
+                                        <img src="assets/images/Shivratri.svg" alt="" height="40" width="40" >
+                                    </div>
+                                    <div class="holiday-text">
+                                        <div class="holiday-title">Maha Shivratri</div>
+                                        <div class="holiday-date">15 Feb 2026</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Department Attendance -->
+                <div class="col-xxl-6 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12 col-5">
+                    <div class="card attendance-card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                            Department Attendance
+                        </div>
+                        <div class="card-body">
+                            <div id="departmentAttendance"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Headcount -->
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div class="card attendance-card h-100">
+                        <div class="card-header bg-white fw-semibold">
+                            Live Headcount
+                        </div>
+                        <div class="card-body">
+                            <div id="headcount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                <div class="card attendance-card attendance-trend-card h-100">
+                <div class="card-header bg-white fw-semibold">
+                    Moments of the day!
+                </div>
+
+                <div class="card-body p-0">
+                    <!-- Tabs -->
+                    <ul class="nav moments-tabs px-3 pt-2" id="momentsTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab"
+                                    data-bs-target="#new-joinee" type="button">
+                                New Joinee
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab"
+                                    data-bs-target="#birthday" type="button">
+                                Birthday
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab"
+                                    data-bs-target="#anniversary" type="button">
+                                Work Anniversary
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="new-joinee">
+                            <div class="user-list">
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar1.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar2.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Iskon</div>
+                                        <div class="user-subtext">Accounts</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar3.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="birthday">
+                           <div class="user-list">
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar1.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar2.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Iskon</div>
+                                        <div class="user-subtext">Accounts</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar3.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="anniversary">
+                            <div class="user-list">
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar1.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar2.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Iskon</div>
+                                        <div class="user-subtext">Accounts</div>
+                                    </div>
+                                </div>
+
+                                <div class="user-item d-flex justify-content-between border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img src="assets/images/avatar3.svg" class="user-avatar">
+                                        <div class="ms-3">
+                                            <div class="user-name">Mukesh Makwana</div>
+                                            <div class="user-subtext">Jr. Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="loc-text">Head Office</div>
+                                        <div class="user-subtext">Computer Vision</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+        <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="card attendance-trend-card attendance-card h-100 ">
+                 <div class="card-header  bg-white fw-semibold d-flex justify-content-between align-items-center">
+                    <span>Pending Approvals</span>
+                    <span class="holidays-view">View All </span>
+                </div>
+                <div class="card-body">
+                    <div id="approvals" style="height:242px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+            <div class="card attendance-card attendance-trend-card h-100 ">
+                <div class="card-header bg-white fw-semibold">
+                    Punctuality Trend
+                </div>
+                <div class="card-body ">
+                    <div id="punctuality"></div>
+                </div>
+            </div>
+        </div>
+
+            </div>
+
+           
+        </div>
+
+        <div class="col-12 col-md-3">
+         
+            <div class="card attendance-card mb-3">
+                        <div class="card-header bg-white fw-semibold d-flex justify-content-between align-items-center" style="height: 48px;">
+                            <span>Holidays</span>
+                            <span class="holidays-view">View</span>
+                        </div>
+    
+                <div class="card-body">
+                    <div class="macs_punch_MainItem">
+                        <div class="livePunch_mainImg">
+                            <img src="assets/images/img/demo-person.png" alt="user-img">
+                        </div>
+                        <div class="livePunch_mainUser_details">
+                            <div class="livePunch_mainUser_name">
+                                Minakshi Patel <span class="emp_code">EMP001018</span>
+                            </div>
+                            <p class="livePunch_mainUser_designation">Marketing | Senior Executive</p>
+                            <div class="punch_details">
+                                <div class="punch_status">
+                                    <img src="assets/images/img/sucess_checkmark_icon.svg" height="16" width="16" alt="icon" /> 
+                                    Clocked-in
+                                </div>
+                                <p class="punch_timimg">10:30 am | Kiosk</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="macs_punch_user_list">
+                        <div class="macs_punch_user">
+                            <div class="macs_punch_user_details">
+                                <div class="macs_punch_userImg">
+                                    <img src="assets/images/avatar1.svg" alt="user" />
+                                </div>
+                                <div class="macs_punch_user_info">
+                                    <p class="macs_punch_user_empCode">EMP001006</p>
+                                    <p class="macs_punch_user_name">Mukesh Makwana</p>
+                                </div>
+                            </div>
+                            <div class="macs_user_punch_details text-end">
+                                <p class="macs_user_punch_status checkedIn">Clocked-in</p>
+                                <p class="macs_user_pnch_time">10:26 am | Kiosk</p>
+                            </div>
+                        </div>
+
+                        <div class="macs_punch_user">
+                            <div class="macs_punch_user_details">
+                                <div class="macs_punch_userImg">
+                                    <img src="assets/images/avatar2.svg" alt="user" />
+                                </div>
+                                <div class="macs_punch_user_info">
+                                    <p class="macs_punch_user_empCode">EMP001006</p>
+                                    <p class="macs_punch_user_name">Mukesh Makwana</p>
+                                </div>
+                            </div>
+                            <div class="macs_user_punch_details text-end">
+                                <p class="macs_user_punch_status checkedOut">Clocked-out</p>
+                                <p class="macs_user_pnch_time">10:20 am | Mobile</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="macs_punch_user">
+                            <div class="macs_punch_user_details">
+                                <div class="macs_punch_userImg">
+                                    <img src="assets/images/avatar3.svg" alt="user" />
+                                </div>
+                                <div class="macs_punch_user_info">
+                                    <p class="macs_punch_user_empCode">EMP001006</p>
+                                    <p class="macs_punch_user_name">Mukesh Makwana</p>
+                                </div>
+                            </div>
+                            <div class="macs_user_punch_details text-end">
+                                <p class="macs_user_punch_status checkedIn">Clocked-in</p>
+                                <p class="macs_user_pnch_time">10:02 am | Kiosk</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+          <div class="card mb-3">
+                <div class="card-header bg-white fw-semibold">
+                    Employee Efficiency
+                </div>
+                <hr class="m-0">
+
+                <div class="card-body px-3 pt-2 pb-2">
+
+                    <!-- TOP INFO ROW -->
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <div class="fw-bold fs-4">1500</div>
+                            <div class="text-uppercase small text-muted">
+                                Productive Hrs
+                            </div>
+                        </div>
+
+                        <div class="small">
+                            <div class="d-flex align-items-center mb-1">
+                                <span style="width:6px;height:6px;background:#2E7D32;border-radius:50%;display:inline-block;margin-right:6px"></span>
+                                Most Productive
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span style="width:6px;height:6px;background:#E6F4EA;border-radius:50%;display:inline-block;margin-right:6px"></span>
+                                Least Productive
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HEATMAP -->
+                    <div id="employeeEfficiencyHeatmap" style="height:170px;width:100%;"></div>
+                </div>
+            </div>
+            <div class="card attendance-card attendance-trend-card  mb-3" style="height: 340px;">
+                <div class="card-header bg-white fw-semibold">
+                    Overtime Hours
+                </div>
+                <div class="card-body">
+                    <div id="overtimeChart" ></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+   
+</section>
+    
+ <script src="assets/js/jquery_3_7_1.min.js"></script>
+<script src="assets/js/bs_5_3.bundle.min.js"></script>
+
+<script src="assets/js/highcharts.js"></script>
+
+<script src="assets/js/heatmap.js"></script>
+
+
+<script src="assets/js/deshbordcharts.js"></script>
+<script src="assets/js/heatfile.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Efficiency HeatMap</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #container {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        /* Ensure there is a clear gap between cells */
+        .highcharts-heatmap .highcharts-point {
+            border-radius: 0 !important; /* Remove rounding of the boxes */
+            margin: 4px; /* Add 4px gap between each box */
+        }
+
+        /* Hide gridlines */
+        .highcharts-plot-line,
+        .highcharts-plot-tick {
+            display: none !important;
+        }
+
+        .highcharts-axis-labels text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Tooltip styling */
+        .highcharts-tooltip span {
+            font-size: 12px;
+        }
+
+        .highcharts-plot-background {
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Employee Efficiency</h1>
+    <div id="container"></div>
+
+    <script>
+        Highcharts.chart('container', {
+            chart: {
+                type: 'heatmap',
+                marginTop: 50,
+                marginBottom: 50,
+                spacing: [10, 10, 10, 10]  // Add space around the chart
+            },
+            title: {
+                text: '1500 PRODUCTIVE HRS',
+                style: {
+                    fontSize: '28px',
+                    color: '#333'
+                }
+            },
+            xAxis: {
+                categories: ['WEEK 1', 'WEEK 2', 'WEEK 3', 'WEEK 4', 'WEEK 5'],
+                title: {
+                    text: 'Weeks'
+                },
+                labels: {
+                    style: {
+                        fontSize: '14px',
+                        color: '#333'
+                    }
+                }
+            },
+            yAxis: {
+                categories: ['100', '200', '300', '400', '500', '600', '700', '800', '900', '1000', '1100', '1200', '1300', '1400', '1500'],
+                title: {
+                    text: 'Productive Hours'
+                },
+                reversed: true,
+                labels: {
+                    style: {
+                        fontSize: '14px',
+                        color: '#333'
+                    }
+                }
+            },
+            colorAxis: {
+                min: 0,
+                max: 1600,
+                minColor: '#d9f0db', // Light green for the least productive
+                maxColor: '#1b5e20' // Dark green for the most productive
+            },
+            series: [{
+                name: 'Productivity',
+                borderWidth: 0, // Remove gridlines between cells
+                data: [
+                    [0, 0, 100], [0, 1, 200], [0, 2, 300], [0, 3, 400], [0, 4, 500],
+                    [1, 0, 600], [1, 1, 700], [1, 2, 800], [1, 3, 900], [1, 4, 1000],
+                    [2, 0, 1100], [2, 1, 1200], [2, 2, 1300], [2, 3, 1400], [2, 4, 1500],
+                    [3, 0, 200], [3, 1, 300], [3, 2, 400], [3, 3, 500], [3, 4, 600],
+                    [4, 0, 700], [4, 1, 800], [4, 2, 900], [4, 3, 1000], [4, 4, 1100]
+                ],
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    style: {
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    }
+                }
+            }],
+            tooltip: {
+                headerFormat: '',
+                pointFormat: 'Week: {point.x}, Hours: {point.y}, Productivity: {point.value}'
+            }
+        });
+    </script>
+
+</body>
+</html>
